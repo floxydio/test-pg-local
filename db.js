@@ -3,16 +3,11 @@ import { configDotenv } from 'dotenv'
 
 configDotenv()
 
-console.log(process.env.USER)
-console.log(process.env.DB_IP)
-console.log(process.env.PW)
-console.log(process.env.DB_NAME)
-
 const sql = postgres({
     host: process.env.DB_IP,
     port: 54320,
-    username: process.env.USER,
-    password: process.env.PW,
+    username: process.env.DB_USER,
+    password: process.env.DB_PW,
     database: process.env.DB_NAME,
     debug: true
 })
